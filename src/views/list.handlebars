@@ -1,0 +1,82 @@
+<div class="orderIPxoay-container all-container">
+    <div class="flex justify-end mb-4 px-4">
+        <button id="btnDeleteSelected" class="hidden px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-all shadow-lg shadow-red-900/20 items-center gap-2">
+            <i class="fa-solid fa-trash"></i> Xóa mục đã chọn (<span id="selectedCount">0</span>)
+        </button>
+        <button id="themBtn" class="hidden px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-all shadow-lg shadow-green-900/20 items-center gap-2">
+            <i class="fa-solid fa-plus"></i> Thêm mới
+        </button>
+    </div>
+    <div class="orderIPxoay-container-main">
+        <div class="flex items-center justify-between border-t border-gray-700 bg-[#1c1f22] px-4 py-3 sm:px-6 mt-4 rounded-b-lg">
+    <div class="flex flex-1 justify-between sm:hidden">
+        {{#if hasPreviousPage}}
+        <a href="?page={{previousPage}}" class="relative inline-flex items-center rounded-md border border-gray-600 bg-[#2a2e33] px-4 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700">Trước</a>
+        {{/if}}
+        {{#if hasNextPage}}
+        <a href="?page={{nextPage}}" class="relative ml-3 inline-flex items-center rounded-md border border-gray-600 bg-[#2a2e33] px-4 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700">Sau</a>
+        {{/if}}
+    </div>
+    
+    <div class="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
+        <div>
+            <p class="text-sm text-gray-400">
+                Hiển thị trang <span class="font-medium text-white">{{currentPage}}</span> trên <span class="font-medium text-white">{{totalPages}}</span>
+            </p>
+        </div>
+        <div>
+            <nav class="isolate inline-flex -space-x-px rounded-md shadow-sm" aria-label="Pagination">
+                {{#if hasPreviousPage}}
+                <a href="?page={{previousPage}}" class="relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-700 hover:bg-gray-800 focus:z-20">
+                    <span class="sr-only">Trước</span>
+                    <i class="fa-solid fa-chevron-left"></i>
+                </a>
+                {{/if}}
+
+                <span class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-white ring-1 ring-inset ring-gray-700 bg-blue-600 focus:z-20">
+                    {{currentPage}}
+                </span>
+
+                {{#if hasNextPage}}
+                <a href="?page={{nextPage}}" class="relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-700 hover:bg-gray-800 focus:z-20">
+                    <span class="sr-only">Sau</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+                {{/if}}
+            </nav>
+        </div>
+    </div>
+</div>
+        <div class="orderIPxoay-container-main-top">
+            <input type="checkbox" name="" id="" class="orderIPxoay-container-main-top-select orderIPxoay-container-main-top-select--checkbox">
+            <div class="orderIPxoay-container-main-top-select orderIPxoay-container-main-top-select--taikhoan">Họ tên</div>
+            <div class="orderIPxoay-container-main-top-select orderIPxoay-container-main-top-select--country">SDT</div>
+            <div class="orderIPxoay-container-main-top-select orderIPxoay-container-main-top-select--info">Email</div>
+            <div class="orderIPxoay-container-main-top-select orderIPxoay-container-main-top-select--date">DateOfBirth</div>
+            <div class="orderIPxoay-container-main-top-select orderIPxoay-container-main-top-select--date">Giới tính</div>
+            <div class="orderIPxoay-container-main-top-select orderIPxoay-container-main-top-select--date_end">Quê quán</div>
+            <div class="orderIPxoay-container-main-top-select text-center" style="flex: 0.5;">Thao tác</div>
+        </div>
+        <div class="orderIPxoay-container-main-box">
+            {{#each khachHangs}}
+            <div class="orderIPxoay-container-main-box-select">
+                <input type="checkbox" value="{{this._id}}" name="" id="" class="orderIPxoay-container-main-box-select1 orderIPxoay-container-main-box-select1--checkbox">
+                <div class="orderIPxoay-container-main-box-select1 orderIPxoay-container-main-box-select1--taikhoan">{{this.HoTen}}</div>
+                <div class="orderIPxoay-container-main-box-select1 orderIPxoay-container-main-box-select1--country">{{this.sdt}}</div>
+                <div class="orderIPxoay-container-main-box-select1 orderIPxoay-container-main-box-select1--info">{{this.email}}</div>
+                <div class="orderIPxoay-container-main-box-select1 orderIPxoay-container-main-box-select1--date">{{this.dateDisplay}}</div>
+                <div class="orderIPxoay-container-main-box-select1 orderIPxoay-container-main-box-select1--date">{{this.gender}}</div>
+                <div class="orderIPxoay-container-main-box-select1 orderIPxoay-container-main-box-select1--date_end">{{this.tinh_tpho}}</div>
+                <div class="orderIPxoay-container-main-box-select1 flex justify-center" style="flex: 0.5;">
+                    <a href="/list/edit/{{this._id}}" class="text-amber-500 hover:text-amber-400 transition-colors p-2 bg-[#2a2e33] rounded-lg border border-gray-700 hover:border-amber-500">
+                        <i class="fa-solid fa-pen-to-square"></i> Sửa
+                    </a>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+    
+</div>
+</div>
+<script src="javascript/list.js"></script>

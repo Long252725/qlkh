@@ -1,0 +1,81 @@
+<div class="min-h-screen bg-gray-100 py-10 px-4">
+    <div class="max-w-2xl mx-auto bg-white shadow-xl rounded-2xl overflow-hidden">
+        <div class="bg-amber-500 p-6">
+            <h2 class="text-2xl font-bold text-white text-center">Cập Nhật Thông Tin Khách Hàng</h2>
+            <p class="text-amber-100 text-center text-sm mt-1">Mã khách hàng: {{khachHang.customerId}}</p>
+        </div>
+
+        <div class="p-8 space-y-6">
+            <input type="hidden" id="customerId" value="{{khachHang.customerId}}">
+            <input type="hidden" id="mongoId" value="{{khachHang._id}}">
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="flex flex-col">
+                    <label for="ho" class="text-sm font-semibold text-gray-700 mb-1">Họ:</label>
+                    <input type="text" id="ho" name="ho" value="{{khachHang.Ho}}"
+                        class="border border-gray-300 p-2.5 rounded-lg focus:ring-2 focus:ring-amber-500 outline-none transition-all">
+                </div>
+
+                <div class="flex flex-col">
+                    <label for="ten" class="text-sm font-semibold text-gray-700 mb-1">Tên:</label>
+                    <input type="text" id="ten" name="ten" value="{{khachHang.Ten}}"
+                        class="border border-gray-300 p-2.5 rounded-lg focus:ring-2 focus:ring-amber-500 outline-none transition-all">
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="flex flex-col">
+                    <label for="email" class="text-sm font-semibold text-gray-700 mb-1">Email:</label>
+                    <input type="email" id="email" name="email" value="{{khachHang.email}}"
+                        class="border border-gray-300 p-2.5 rounded-lg focus:ring-2 focus:ring-amber-500 outline-none transition-all">
+                </div>
+
+                <div class="flex flex-col">
+                    <label for="sdt" class="text-sm font-semibold text-gray-700 mb-1">Số điện thoại:</label>
+                    <input type="text" id="sdt" name="sdt" value="{{khachHang.sdt}}"
+                        class="border border-gray-300 p-2.5 rounded-lg focus:ring-2 focus:ring-amber-500 outline-none transition-all">
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="flex flex-col">
+                <label class="text-sm font-semibold text-gray-700">Ngày sinh hiện tại: <span class="text-amber-600 font-normal">{{khachHang.dateOfBirth}}</span></label>
+                    <label for="dateOfBirth" class="text-sm font-semibold text-gray-700 mb-1">Ngày sinh:</label>
+                    <input type="date" id="dateOfBirth" name="dateOfBirth" value="{{khachHang.dateOfBirth}}"
+                        class="border border-gray-300 p-2.5 rounded-lg focus:ring-2 focus:ring-amber-500 outline-none transition-all">
+                </div>
+
+                <div class="flex flex-col">
+                    <label for="gender" class="text-sm font-semibold text-gray-700 mb-1">Giới tính:</label>
+                    <select id="gender" name="gender" data-selected="{{khachHang.gender}}"
+                        class="border border-gray-300 p-2.5 rounded-lg bg-white focus:ring-2 focus:ring-amber-500 outline-none transition-all">
+                        <option value="male">Nam</option>
+                        <option value="female">Nữ</option>
+                        <option value="other">Khác</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="flex flex-col space-y-2">
+                <label class="text-sm font-semibold text-gray-700">Quê quán hiện tại: <span class="text-amber-600 font-normal">{{khachHang.tinh_tpho}} - {{khachHang.phuong_xa}}</span></label>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4" id="queQuan">
+                    <select id="province" class="border border-gray-300 p-2.5 rounded-lg bg-white focus:ring-2 focus:ring-amber-500 outline-none"><option value="">Chọn lại Tỉnh/Thành</option></select>
+                    <select id="district" class="border border-gray-300 p-2.5 rounded-lg bg-white focus:ring-2 focus:ring-amber-500 outline-none"><option value="">Chọn lại Quận/Huyện</option></select>
+                    <select id="ward" class="border border-gray-300 p-2.5 rounded-lg bg-white focus:ring-2 focus:ring-amber-500 outline-none"><option value="">Chọn lại Phường/Xã</option></select>
+                </div>
+            </div>
+
+            <div class="pt-4 flex gap-4">
+                <a href="/list" class="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold py-3 rounded-xl text-center transition-all">
+                    Hủy bỏ
+                </a>
+                <button type="button" id="btnUpdate" 
+                    class="flex-[2] bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 rounded-xl shadow-lg transform transition-all active:scale-95">
+                    Lưu Thay Đổi
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="/javascript/formKhachHang.js"></script>
+</div>

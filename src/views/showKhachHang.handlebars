@@ -1,0 +1,71 @@
+<div class="container mt-5">
+    <div class="search">
+        <div class="row mb-4">
+    <div class="col-md-6 offset-md-3">
+        <input  type="text" name="customerId" class="form-control" id="searchInput" placeholder="Nhập tên khách hàng để tìm..." required>
+        <div class="input-group-append">
+          <button class="btn btn-primary" type="submit" id="btnSearch">
+            <i class="fas fa-search"></i> Tìm kiếm
+          </button>
+          
+        </div>
+    </div>
+  </div>
+    </div>
+  <div class="card shadow-sm">
+    <div class="card-header bg-primary text-white">
+      <h2 class="mb-0">Thông tin khách hàng</h2>
+    </div>
+    <div class="card-body">
+      {{#if khachHang}}
+      <div class="row mb-3">
+        <div class="col-sm-4 font-weight-bold">Mã khách hàng</div>
+        <div class="col-sm-8">{{khachHang.customerId}}</div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-sm-4 font-weight-bold">Họ và tên</div>
+        <div class="col-sm-8">{{khachHang.Ho}} {{khachHang.Ten}}</div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-sm-4 font-weight-bold">Email</div>
+        <div class="col-sm-8">{{khachHang.email}}</div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-sm-4 font-weight-bold">Số điện thoại</div>
+        <div class="col-sm-8">{{khachHang.sdt}}</div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-sm-4 font-weight-bold">Ngày sinh</div>
+        <div class="col-sm-8">{{khachHang.dateOfBirth}}</div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-sm-4 font-weight-bold">Giới tính</div>
+        <div class="col-sm-8">{{khachHang.gender}}</div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-sm-4 font-weight-bold">Tỉnh/Thành</div>
+        <div class="col-sm-8">{{khachHang.tinh_tpho}}</div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-sm-4 font-weight-bold">Quận/Huyện</div>
+        <div class="col-sm-8">{{khachHang.phuong_xa}}</div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-sm-4 font-weight-bold">Phường/Xã</div>
+        <div class="col-sm-8">{{khachHang.thon_xom}}</div>
+      </div>
+      {{else}}
+      <div class="alert alert-warning" role="alert">
+        Không tìm thấy thông tin khách hàng.
+      </div>
+      {{/if}}
+      {{!-- <div class="mt-4"> --}}
+        {{!-- <a href="/form" class="btn btn-secondary">Quay lại</a> --}}
+      {{!-- </div> --}}
+      <button class="btn btn-danger" type="submit" id="btnDelete">
+            <i class="fas fa-trash"></i> Xóa
+          </button>
+    </div>
+  </div>
+  <script src="/javascript/showKhachHang.js"></script>
+</div>
