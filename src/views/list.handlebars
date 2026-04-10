@@ -47,7 +47,7 @@
         </div>
     </div>
 </div>
-        <div class="orderIPxoay-container-main-top">
+        {{!-- <div class="orderIPxoay-container-main-top">
             <input type="checkbox" name="" id="" class="orderIPxoay-container-main-top-select orderIPxoay-container-main-top-select--checkbox">
             <div class="orderIPxoay-container-main-top-select orderIPxoay-container-main-top-select--taikhoan">Họ tên</div>
             <div class="orderIPxoay-container-main-top-select orderIPxoay-container-main-top-select--country">SDT</div>
@@ -55,7 +55,7 @@
             <div class="orderIPxoay-container-main-top-select orderIPxoay-container-main-top-select--date">DateOfBirth</div>
             <div class="orderIPxoay-container-main-top-select orderIPxoay-container-main-top-select--date">Giới tính</div>
             <div class="orderIPxoay-container-main-top-select orderIPxoay-container-main-top-select--date_end">Quê quán</div>
-            <div class="orderIPxoay-container-main-top-select text-center" style="flex: 0.5;">Thao tác</div>
+            <div class="orderIPxoay-container-main-top-select thao_tac text-center">Thao tác</div>
         </div>
         <div class="orderIPxoay-container-main-box">
             {{#each khachHangs}}
@@ -74,7 +74,40 @@
                 </div>
             </div>
             {{/each}}
-        </div>
+        </div> --}}
+        <div class="table-container">
+    <div class="container-box grid-row">
+        <div class="cell-center"><input type="checkbox" class="cell-center2"></div>
+        <div>Họ tên</div>
+        <div>SDT</div>
+        <div>Email</div>
+        <div>Ngày sinh</div>
+        <div>Giới tính</div>
+        <div>Quê quán</div>
+        <div class="cell-center">Thao tác</div>
+    </div>
+
+    <div class="container-list-box">
+        {{#each khachHangs}}
+            <div class="container-row grid-row">
+                <div class="cell-center">
+                    <input type="checkbox" class="cell-center3" value="{{this._id}}">
+                </div>
+                <div class="cell-data cell-name">{{this.HoTen}}</div>
+                <div class="cell-data cell-sdt">{{this.sdt}}</div>
+                <div class="cell-data">{{this.email}}</div>
+                <div class="cell-data">{{this.dateDisplay}}</div>
+                <div class="cell-data">{{this.gender}}</div>
+                <div class="cell-data">{{this.tinh_tpho}}</div>
+                <div class="cell-center">
+                    <a href="/list/edit/{{this._id}}" class="btn-edit">
+                        <i class="fa-solid fa-pen-to-square"></i> Sửa
+                    </a>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</div>
     </div>
     
 </div>

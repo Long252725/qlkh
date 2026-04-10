@@ -959,22 +959,19 @@ body{
 /* .profile-container-form-active-box-main-select {
     height: 40px !important;
 } */
-/* transaction */
-.transactions-container-main-box-header,
-.naptien-container-box-activity-top,
-.profile-container-form-active-box-top,
-.orderIPprivate-container-main-top,
 .orderIPxoay-container-main-top,
 .orderIPv6xoay-container-main-top {
-    position: relative;
+    /* position: relative;
     width: 100%;
-    height: 50px;
+    height: 50px; */
     background-color: rgb(223, 223, 223);
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: flex-start !important;
     border-bottom: 1px solid gray;
-    border-radius: 6px 6px 0 0;
+    border-radius: 6px 6px 0 0; */
+
+
 }
 
 .transactions-container-main-box-header-select,
@@ -2969,4 +2966,104 @@ width: 80%;
 }
 .orderIPxoay-container-main-box-select1--date {
     width: 170px !important;
+}
+.orderIPxoay-container-main-box-select1--checkbox {
+    width: 70px !important ;
+    background-color: red !important;
+}
+.orderIPxoay-container-main-top-select--taikhoan {
+    width: 200px !important;
+}
+.orderIPxoay-container-main-top-select--info {
+    width: 250px !important;
+}
+.thao_tac {
+    width: 100px;
+    flex: 0,5px;
+}
+.orderIPxoay-container-main-top-select,
+.orderIPxoay-container-main-box-select1 {
+    background-color: red !important;
+}
+/* Khung chứa bảng */
+.table-container {
+    width: 100%;
+    background-color: #16191c;
+    border-radius: 12px;
+    border: 1px solid #2d3135;
+    overflow: hidden;
+}
+
+/* Định nghĩa Grid dùng chung cho cả Header và Body */
+.grid-row {
+    display: grid;
+    /* Cấu trúc: Checkbox | Họ tên | SDT | Email | DOB | Giới tính | Quê quán | Thao tác */
+    grid-template-columns: 50px 1.5fr 1fr 2fr 1fr 0.8fr 1.5fr 100px;
+    gap: 15px; /* Khoảng cách giữa các cột */
+    align-items: center;
+    padding: 12px 20px;
+}
+
+/* Header */
+.container-box {
+    background-color: #2563eb; /* Màu xanh Blue-600 */
+    color: #ffffff;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+}
+
+/* Từng hàng dữ liệu */
+.container-row {
+    border-top: 1px solid #2d3135;
+    color: #9ca3af;
+    transition: background-color 0.2s;
+}
+
+.container-row:hover {
+    background-color: #1f2226;
+}
+
+/* Căn chỉnh chữ */
+.cell-data {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Hiện dấu ... nếu quá dài */
+}
+
+.cell-name {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.cell-sdt {
+    font-family: monospace;
+}
+
+/* Căn giữa checkbox và nút bấm */
+.cell-center {
+    display: flex;
+    justify-content: center;
+}
+
+/* Nút Sửa */
+.btn-edit {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 12px;
+    background-color: #2a2e33;
+    color: #f59e0b; /* Màu hổ phách */
+    border: 1px solid #374151;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    transition: all 0.2s;
+}
+
+.btn-edit:hover {
+    border-color: #f59e0b;
+    transform: scale(1.05);
 }
